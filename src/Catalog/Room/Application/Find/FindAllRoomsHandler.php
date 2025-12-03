@@ -16,8 +16,8 @@ final readonly class FindAllRoomsHandler extends Query
     ) {
     }
 
-    public function __invoke(FindAllRooms $query): RoomsCollection
+    public function __invoke(FindAllRooms $query): RoomCollection
     {
-        return new RoomsCollection($this->finder->findAll());
+        return new RoomCollection($this->finder->findAll());
     }
 }

@@ -10,7 +10,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand('app:list-rooms')]
-final readonly class ListRoomCommand
+final readonly class ListRoomsCommand
 {
     public function __construct(
         private QueryBus $queryBus,
@@ -19,14 +19,14 @@ final readonly class ListRoomCommand
 
     public function __invoke(SymfonyStyle $io): int
     {
-        $result = $this->queryBus->ask(new FindAllRooms());
+        $collection = $this->queryBus->ask(new FindAllRooms());
 
         $rows = [];
-        foreach ($result->rooms as $room) {
+        foreach ($collection->items as $room) {
             $rows[] = [$room->id, $room->number, $room->status->value];
         }
 
-        $io->title('List rooms');
+        $io->title('Registered rooms');
         $io->table(['ID', 'Number', 'Status'], $rows);
 
         return 0;

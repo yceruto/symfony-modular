@@ -7,7 +7,7 @@ namespace App\Catalog\Room\Application\Find;
 use OpenSolid\Cqs\Query\Query;
 
 /**
- * @template-extends Query<RoomsCollection>
+ * @template-extends Query<RoomCollection>
  */
 final readonly class FindAllRooms extends Query
 {
