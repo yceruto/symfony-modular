@@ -15,14 +15,7 @@ class UidType extends Type
 {
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
-        if ($this->hasNativeGuidType($platform)) {
-            return $platform->getGuidTypeDeclarationSQL($column);
-        }
-
-        return $platform->getBinaryTypeDeclarationSQL([
-            'length' => 16,
-            'fixed' => true,
-        ]);
+        return $platform->getGuidTypeDeclarationSQL($column);
     }
 
     public function convertToPHPValue(mixed $value, AbstractPlatform $platform): ?Id
@@ -49,7 +42,7 @@ class UidType extends Type
         $class = $this->getClass();
 
         if (\is_a($value, $class)) {
-            return $this->toString($value, $platform);
+            return $value->value;
         }
 
         if (null === $value || '' === $value) {
@@ -61,24 +54,10 @@ class UidType extends Type
         }
 
         try {
-            return $this->toString($class::fromString($value), $platform);
+            return $class::fromString($value)->value;
         } catch (\InvalidArgumentException $e) {
             throw ValueNotConvertible::new($value, $class, previous: $e);
         }
-    }
-
-    private function toString(Id $id, AbstractPlatform $platform): string
-    {
-        if ($this->hasNativeGuidType($platform)) {
-            return $id->value;
-        }
-
-        return Uuid::fromString($id->value)->toBinary();
-    }
-
-    private function hasNativeGuidType(AbstractPlatform $platform): bool
-    {
-        return $platform->getGuidTypeDeclarationSQL([]) !== $platform->getStringTypeDeclarationSQL(['fixed' => true, 'length' => 36]);
     }
 
     /**
