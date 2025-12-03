@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Domain\Model;
 
+use App\Catalog\Room\Domain\Error\InvalidRoomState;
 use App\Catalog\Room\Domain\Event\RoomCreated;
 use App\Catalog\Room\Domain\Event\RoomUpdated;
 use Doctrine\ORM\Mapping\Column;
@@ -49,6 +50,10 @@ class Room
     {
         if ($this->status->equals($status)) {
             return;
+        }
+
+        if (!$this->status->can($status)) {
+            throw InvalidRoomState::create(\sprintf('Room "%s" cannot transition from "%s" to "%s".', $this->number, $this->status->value, $status->value));
         }
 
         $this->status = $status;

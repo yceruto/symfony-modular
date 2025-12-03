@@ -6,7 +6,6 @@ enum RoomStatus: string
 {
     case AVAILABLE = 'available';
     case OCCUPIED = 'occupied';
-    case OUT_OF_ORDER = 'out-of-order';
     case UNDER_MAINTENANCE = 'under-maintenance';
 
     public function isAvailable(): bool
@@ -19,11 +18,6 @@ enum RoomStatus: string
         return $this === self::OCCUPIED;
     }
 
-    public function isOutOfOrder(): bool
-    {
-        return $this === self::OUT_OF_ORDER;
-    }
-
     public function isUnderMaintenance(): bool
     {
         return $this === self::UNDER_MAINTENANCE;
@@ -32,5 +26,15 @@ enum RoomStatus: string
     public function equals(self $other): bool
     {
         return $this === $other;
+    }
+
+    public function can(self $status): bool
+    {
+        $feasible = match ($this) {
+            self::AVAILABLE => [self::OCCUPIED, self::UNDER_MAINTENANCE],
+            self::OCCUPIED, self::UNDER_MAINTENANCE => [self::AVAILABLE],
+        };
+
+        return \in_array($status, $feasible, true);
     }
 }
