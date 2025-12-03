@@ -70,10 +70,10 @@ class UidType extends Type
     private function toString(Id $id, AbstractPlatform $platform): string
     {
         if ($this->hasNativeGuidType($platform)) {
-            return $id->value();
+            return $id->value;
         }
 
-        return Uuid::fromString($id->value())->toBinary();
+        return Uuid::fromString($id->value)->toBinary();
     }
 
     private function hasNativeGuidType(AbstractPlatform $platform): bool

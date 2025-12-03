@@ -19,7 +19,7 @@ final readonly class RoomItemView
     public static function fromModel(Room $room): self
     {
         return new self(
-            $room->id->value(),
+            $room->id->value,
             (string) $room->number,
             $room->status,
         );

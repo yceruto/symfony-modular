@@ -6,7 +6,7 @@ use Symfony\Component\Uid\Uuid;
 
 class Id implements \Stringable
 {
-    private string $value;
+    private(set) string $value;
 
     public function __construct()
     {
@@ -21,14 +21,9 @@ class Id implements \Stringable
         return $self;
     }
 
-    public function value(): string
-    {
-        return $this->value;
-    }
-
     public function equals(self $other): bool
     {
-        return $this->value() === $other->value();
+        return $this->value === $other->value;
     }
 
     public function __toString(): string

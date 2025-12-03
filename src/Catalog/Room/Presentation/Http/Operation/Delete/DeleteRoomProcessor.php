@@ -17,12 +17,10 @@ final readonly class DeleteRoomProcessor implements ProcessorInterface
     ) {
     }
 
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): null
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): void
     {
         $id = RoomId::fromString($uriVariables['id']);
 
         $this->commandBus->execute(new DeleteRoom($id));
-
-        return null;
     }
 }

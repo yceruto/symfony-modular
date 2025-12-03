@@ -8,7 +8,10 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Patch;
 use ApiPlatform\Metadata\Post;
+use App\Catalog\Room\Presentation\Http\Operation\Patch\PatchRoomPayload;
+use App\Catalog\Room\Presentation\Http\Operation\Patch\PatchRoomProcessor;
 use App\Catalog\Room\Presentation\Http\Operation\Post\CreateRoomPayload;
 use App\Catalog\Room\Presentation\Http\Operation\Post\CreateRoomProcessor;
 use App\Catalog\Room\Presentation\Http\Operation\Delete\DeleteRoomProcessor;
@@ -40,6 +43,14 @@ use App\Catalog\Room\Presentation\Http\Operation\GetCollection\RoomItemView;
             uriVariables: ['id'],
             provider: RoomProvider::class,
             processor: DeleteRoomProcessor::class,
+        ),
+        new Patch(
+            uriTemplate: '/rooms/{id}',
+            uriVariables: ['id'],
+            input: PatchRoomPayload::class,
+            output: RoomView::class,
+            provider: RoomProvider::class,
+            processor: PatchRoomProcessor::class,
         ),
     ],
 )]

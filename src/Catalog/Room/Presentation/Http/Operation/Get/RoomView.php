@@ -13,15 +13,19 @@ final readonly class RoomView
         public string $id,
         public RoomNumberView $number,
         public RoomStatus $status,
+        public \DateTimeImmutable $createdAt,
+        public ?\DateTimeImmutable $updatedAt = null,
     ) {
     }
 
     public static function fromModel(Room $room): self
     {
         return new self(
-            $room->id->value(),
+            $room->id->value,
             RoomNumberView::fromModel($room->number),
             $room->status,
+            $room->createdAt,
+            $room->updatedAt,
         );
     }
 }
