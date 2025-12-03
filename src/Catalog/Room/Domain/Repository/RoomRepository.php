@@ -15,5 +15,8 @@ interface RoomRepository
 
     public function ofId(RoomId $id): ?Room;
 
+    /**
+     * @return iterable<Room>
+     */
     public function all(): iterable;
 }
