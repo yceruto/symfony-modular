@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae995be22c1802dd0fdc5b9a598d4b71",
+    "content-hash": "a33c8d51763c8ba1b5d8574a75e73d3c",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -2419,6 +2419,157 @@
             "time": "2025-10-23T06:57:22+00:00"
         },
         {
+            "name": "open-solid/bus",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-solid/bus.git",
+                "reference": "44dba5b16225072fa197ac77f771465dc2f214e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-solid/bus/zipball/44dba5b16225072fa197ac77f771465dc2f214e8",
+                "reference": "44dba5b16225072fa197ac77f771465dc2f214e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/container": "^2.0",
+                "psr/log": "^3.0",
+                "symfony/service-contracts": "^3.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "^3.1",
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "phpunit/phpunit": "^10.0",
+                "symfony/dependency-injection": "^7.1",
+                "yceruto/decorator": "^1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenSolid\\Bus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yonel Ceruto",
+                    "email": "open@yceruto.dev"
+                }
+            ],
+            "description": "Simple Bus Component",
+            "support": {
+                "issues": "https://github.com/open-solid/bus/issues",
+                "source": "https://github.com/open-solid/bus/tree/v1.1.4"
+            },
+            "time": "2024-12-13T21:15:04+00:00"
+        },
+        {
+            "name": "open-solid/cqs",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-solid/cqs.git",
+                "reference": "39039514a9606433f64235b10a747feeb146c766"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-solid/cqs/zipball/39039514a9606433f64235b10a747feeb146c766",
+                "reference": "39039514a9606433f64235b10a747feeb146c766",
+                "shasum": ""
+            },
+            "require": {
+                "open-solid/bus": "^1.1",
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "phpunit/phpunit": "^10.0",
+                "psalm/plugin-phpunit": "^0.18",
+                "symfony/messenger": "^7.1",
+                "vimeo/psalm": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenSolid\\Cqs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yonel Ceruto",
+                    "email": "open@yceruto.dev"
+                }
+            ],
+            "description": "Contract for Command Query Separation pattern",
+            "support": {
+                "issues": "https://github.com/open-solid/cqs/issues",
+                "source": "https://github.com/open-solid/cqs/tree/v1.0.4"
+            },
+            "time": "2024-08-21T18:21:03+00:00"
+        },
+        {
+            "name": "open-solid/cqs-bundle",
+            "version": "v1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-solid/cqs-bundle.git",
+                "reference": "9d28cc7dacbfea9f8497b9c16645c38a1ac018a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-solid/cqs-bundle/zipball/9d28cc7dacbfea9f8497b9c16645c38a1ac018a1",
+                "reference": "9d28cc7dacbfea9f8497b9c16645c38a1ac018a1",
+                "shasum": ""
+            },
+            "require": {
+                "open-solid/cqs": "^1.0",
+                "php": ">=8.2",
+                "symfony/framework-bundle": "^7.1"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^2.12",
+                "doctrine/orm": "^3.0",
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "phpunit/phpunit": "^10.0",
+                "roave/security-advisories": "dev-latest",
+                "symfony/browser-kit": "^7.1",
+                "symfony/messenger": "^7.1",
+                "symfony/yaml": "^7.1",
+                "yceruto/decorator": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenSolid\\CqsBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yonel Ceruto",
+                    "email": "open@yceruto.dev"
+                }
+            ],
+            "description": "Symfony integration for Command Query Separation pattern",
+            "support": {
+                "issues": "https://github.com/open-solid/cqs-bundle/issues",
+                "source": "https://github.com/open-solid/cqs-bundle/tree/v1.0.11"
+            },
+            "time": "2024-12-13T21:18:20+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -4676,6 +4827,79 @@
                 }
             ],
             "time": "2025-11-27T13:38:24+00:00"
+        },
+        {
+            "name": "symfony/object-mapper",
+            "version": "v7.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/object-mapper.git",
+                "reference": "51dd0757e1055dbab18da9e488e5b684e737b2ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/object-mapper/zipball/51dd0757e1055dbab18da9e488e5b684e737b2ab",
+                "reference": "51dd0757e1055dbab18da9e488e5b684e737b2ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/container": "^2.0"
+            },
+            "conflict": {
+                "symfony/property-access": "<7.2"
+            },
+            "require-dev": {
+                "symfony/property-access": "^7.2|^8.0",
+                "symfony/var-exporter": "^7.2|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\ObjectMapper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a way to map an object to another object",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/object-mapper/tree/v7.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-11-21T13:19:22+00:00"
         },
         {
             "name": "symfony/password-hasher",
