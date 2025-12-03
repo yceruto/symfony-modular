@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a33c8d51763c8ba1b5d8574a75e73d3c",
+    "content-hash": "9dd9dade66938f9a94c8d0fff6ac5f91",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -2568,6 +2568,101 @@
                 "source": "https://github.com/open-solid/cqs-bundle/tree/v1.0.11"
             },
             "time": "2024-12-13T21:18:20+00:00"
+        },
+        {
+            "name": "open-solid/domain",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-solid/domain.git",
+                "reference": "af37d37ff2f0c18040541ae7c88a4075d92dde7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-solid/domain/zipball/af37d37ff2f0c18040541ae7c88a4075d92dde7e",
+                "reference": "af37d37ff2f0c18040541ae7c88a4075d92dde7e",
+                "shasum": ""
+            },
+            "require": {
+                "open-solid/bus": "^1.1",
+                "php": ">=8.2",
+                "symfony/string": "^7.1",
+                "symfony/uid": "^7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "phpunit/phpunit": "^11.1",
+                "symfony/messenger": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OpenSolid\\Domain\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yonel Ceruto",
+                    "email": "open@yceruto.dev"
+                }
+            ],
+            "description": "Domain events, event bus and more",
+            "support": {
+                "issues": "https://github.com/open-solid/domain/issues",
+                "source": "https://github.com/open-solid/domain/tree/v1.0.3"
+            },
+            "time": "2024-08-21T18:41:36+00:00"
+        },
+        {
+            "name": "open-solid/domain-bundle",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-solid/domain-bundle.git",
+                "reference": "1d3f3c90fabd5b2adbe5e58267f239036e701bfa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-solid/domain-bundle/zipball/1d3f3c90fabd5b2adbe5e58267f239036e701bfa",
+                "reference": "1d3f3c90fabd5b2adbe5e58267f239036e701bfa",
+                "shasum": ""
+            },
+            "require": {
+                "open-solid/domain": "^1.0",
+                "php": ">=8.2",
+                "symfony/framework-bundle": "^6.4|^7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "symfony/messenger": "^7.1",
+                "yceruto/decorator": "^1.2"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "OpenSolid\\DomainBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yonel Ceruto",
+                    "email": "open@yceruto.dev"
+                }
+            ],
+            "description": "Symfony bundle for domain building blocks",
+            "support": {
+                "issues": "https://github.com/open-solid/domain-bundle/issues",
+                "source": "https://github.com/open-solid/domain-bundle/tree/v1.0.5"
+            },
+            "time": "2024-12-13T21:22:49+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

@@ -9,4 +9,5 @@ return [
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
     ApiPlatform\Symfony\Bundle\ApiPlatformBundle::class => ['all' => true],
     OpenSolid\CqsBundle\CqsBundle::class => ['all' => true],
+    OpenSolid\DomainBundle\DomainBundle::class => ['all' => true],
 ];

@@ -64,6 +64,9 @@
     "open-solid/cqs-bundle": {
         "version": "v1.0.11"
     },
+    "open-solid/domain-bundle": {
+        "version": "v1.0.5"
+    },
     "symfony/console": {
         "version": "7.4",
         "recipe": {

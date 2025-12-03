@@ -1528,6 +1528,11 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         strategy?: "symfony"|"native", // Default: "native"
  *     },
  * }
+ * @psalm-type DomainConfig = array{
+ *     bus?: array{
+ *         strategy?: "symfony"|"native", // Default: "native"
+ *     },
+ * }
  * @psalm-type RoomConfig = array<mixed>
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
@@ -1541,6 +1546,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     nelmio_cors?: NelmioCorsConfig,
  *     api_platform?: ApiPlatformConfig,
  *     cqs?: CqsConfig,
+ *     domain?: DomainConfig,
  *     room?: RoomConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
@@ -1554,6 +1560,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         cqs?: CqsConfig,
+ *         domain?: DomainConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1567,6 +1574,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         cqs?: CqsConfig,
+ *         domain?: DomainConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1580,6 +1588,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         cqs?: CqsConfig,
+ *         domain?: DomainConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

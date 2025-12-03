@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Presentation\Console\List;
 
-use App\Catalog\Room\Application\Search\FindAllRooms;
+use App\Catalog\Room\Application\Find\FindAllRooms;
 use OpenSolid\Cqs\Query\QueryBus;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Style\SymfonyStyle;
