@@ -10,4 +10,5 @@ return [
     ApiPlatform\Symfony\Bundle\ApiPlatformBundle::class => ['all' => true],
     OpenSolid\CqsBundle\CqsBundle::class => ['all' => true],
     OpenSolid\DomainBundle\DomainBundle::class => ['all' => true],
+    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 ];
