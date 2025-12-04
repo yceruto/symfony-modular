@@ -8,7 +8,7 @@ This is a Symfony 7.4 modular application demonstrating Domain-Driven Design (DD
 - API Platform for REST APIs
 - Symfony Messenger for message handling
 - Doctrine ORM with attribute-based mapping
-- Open Solid CQS and Domain bundles for CQRS pattern
+- Open Solid CQS and Domain bundles for CQS pattern
 - Monolog for logging
 - SQLite as the default database (configurable)
 
@@ -21,9 +21,6 @@ symfony server:start
 
 # Clear cache
 php bin/console cache:clear
-
-# List all available commands
-php bin/console list
 ```
 
 ### Database
@@ -78,7 +75,7 @@ src/
 
 Each module follows **4-layer architecture**:
 1. **Presentation**: Primary adapters, HTTP controllers via API Platform Resources, Console commands
-2. **Application**: Application logic, CQRS handlers using `#[AsCommandHandler]` and `#[AsQueryHandler]`
+2. **Application**: Application logic, Command/Query handlers using `#[AsCommandHandler]` and `#[AsQueryHandler]`
 3. **Domain**: Core business logic, Rich domain models with behavior, domain events, value objects, repositories (interfaces)
 4. **Infrastructure**: Secondary adapters, persistence implementations, event subscribers, module configuration
 
@@ -95,18 +92,19 @@ To add a new module:
 1. Create the module directory structure under `src/{Context}/{ModuleName}/`
 2. Create `{ModuleName}Extension.php` in `Infrastructure/` extending `SharedExtension`
 3. Add module-specific configuration in `Infrastructure/Resources/config/packages/{package}.yaml` if necessary
+4. The `{ModuleName}Extension` class must be registered in the `src/Kernel.php`
 
-### CQRS Pattern
+### CQS Design Pattern
 
-The application uses **Command Query Responsibility Segregation**:
+The application uses **Command Query Separation**:
 
 - **Commands**: Write operations (Create/Update/Delete)
-  - Located in `Application/{Operation}/`
+  - Located in `Application/{Operation}/` e.g. `Application/Create/`
   - Handlers marked with `#[AsCommandHandler]`
   - Example: `CreateRoom` command → `CreateRoomHandler`
 
 - **Queries**: Read operations (Find/Get/List)
-  - Located in `Application/Find/`
+  - Located in `Application/{Operation}` e.g. `Application/Find/`
   - Handlers marked with `#[AsQueryHandler]`
   - Example: `FindAllRooms` query → `FindAllRoomsHandler`
   - Custom finder interfaces for flexible queries
@@ -127,7 +125,7 @@ Event subscribers live in `Infrastructure/` for cross-cutting concerns like logg
 HTTP endpoints are defined via `#[ApiResource]` attributes in `Presentation/Http/Resource/`:
 
 - Each operation specifies custom **Providers** (read) and **Processors** (write)
-- Operations map to CQRS handlers via dedicated operation classes
+- Operations map to Command/Query handlers via dedicated operation classes
 - Input/Output DTOs separate API contracts from domain models
 - Example: `RoomResource.php` defines GET, POST, PATCH, DELETE with custom providers/processors
 
@@ -173,7 +171,7 @@ Custom domain errors extend these base error types.
 
 Key libraries to understand:
 
-- **open-solid/cqs-bundle**: Provides CQRS handler attributes and command/query bus
+- **open-solid/cqs-bundle**: Provides Command/Query handler attributes and command/query bus
 - **open-solid/domain-bundle**: Provides domain event infrastructure and base error types
 - **API Platform**: REST API framework with automatic OpenAPI docs
 - **Symfony Messenger**: Async message handling and domain event dispatching (currently sync transport)
