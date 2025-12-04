@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__jetbrains__list_directory_tree",
+      "Bash(php bin/console:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Infrastructure\History;
+namespace App\Catalog\Room\Infrastructure\Logging;
 
 use App\Catalog\Room\Domain\Event\RoomUpdated;
 use OpenSolid\DomainBundle\Attribute\AsDomainEventSubscriber;
