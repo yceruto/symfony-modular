@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Doctrine\DBAL\Type;
+namespace App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type;
 
 use App\Shared\Domain\Model\Id;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Exception\InvalidType;
 use Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use Doctrine\DBAL\Types\Type;
-use Symfony\Component\Uid\Uuid;
 
 class UidType extends Type
 {

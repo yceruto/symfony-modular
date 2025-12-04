@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Shared\Infrastructure\Doctrine\ORM\Mapping;
+namespace App\Shared\Infrastructure\Persistence\Doctrine\ORM\Mapping;
 
 use App\Shared\Domain\Model\Id;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
