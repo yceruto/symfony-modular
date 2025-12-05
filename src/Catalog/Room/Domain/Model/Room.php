@@ -25,7 +25,7 @@ class Room
     private(set) RoomNumber $number;
 
     #[Column]
-    public RoomStatus $status {
+    public RoomStatus $status = RoomStatus::AVAILABLE {
         get => $this->status;
         set (RoomStatus $status) {
             if ($this->status->equals($status)) {
