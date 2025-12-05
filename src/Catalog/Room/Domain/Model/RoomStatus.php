@@ -28,7 +28,7 @@ enum RoomStatus: string
         return $this === $other;
     }
 
-    public function can(self $status): bool
+    public function canTransitionTo(self $status): bool
     {
         $feasible = match ($this) {
             self::AVAILABLE => [self::OCCUPIED, self::UNDER_MAINTENANCE],

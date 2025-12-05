@@ -13,8 +13,8 @@ class CreateRoomInput
     #[Argument, Ask('The floor of the room')]
     public int $floor;
 
-    #[Argument, Ask('The number of the room')]
-    public int $apartment;
+    #[Argument, Ask('The door of the room')]
+    public int $door;
 
     #[Argument, Ask('The status of the room')]
     public RoomStatus $status;

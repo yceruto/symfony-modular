@@ -10,7 +10,7 @@ final readonly class RoomNumberView
 {
     public function __construct(
         public int $floor,
-        public int $apartment,
+        public int $door,
     ) {
     }
 
@@ -18,7 +18,7 @@ final readonly class RoomNumberView
     {
         return new self(
             $number->floor,
-            $number->apartment,
+            $number->door,
         );
     }
 }

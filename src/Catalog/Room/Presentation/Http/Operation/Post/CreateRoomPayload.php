@@ -18,7 +18,7 @@ final class CreateRoomPayload
 
     #[Assert\NotNull]
     #[Assert\GreaterThan(0)]
-    public int $apartment;
+    public int $door;
 
     #[Assert\NotNull]
     public RoomStatus $status;

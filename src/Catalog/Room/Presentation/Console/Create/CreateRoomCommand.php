@@ -24,7 +24,7 @@ final readonly class CreateRoomCommand
     {
         $command = new CreateRoom(
             new RoomId(),
-            new RoomNumber($input->floor, $input->apartment),
+            new RoomNumber($input->floor, $input->door),
             $input->status,
         );
 

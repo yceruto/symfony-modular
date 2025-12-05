@@ -15,12 +15,12 @@ class RoomNumber implements \Stringable
         private(set) int $floor,
 
         #[Column]
-        private(set) int $apartment,
+        private(set) int $door,
     ) {
     }
 
     public function __toString(): string
     {
-        return \sprintf('%d%d', $this->floor, $this->apartment);
+        return \sprintf('%d%d', $this->floor, $this->door);
     }
 }

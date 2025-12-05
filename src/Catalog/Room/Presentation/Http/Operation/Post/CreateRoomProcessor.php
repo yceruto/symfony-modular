@@ -25,7 +25,7 @@ final readonly class CreateRoomProcessor implements ProcessorInterface
 
         $command = new CreateRoom(
             id: $data->id ? RoomId::fromString($data->id) : new RoomId(),
-            number: new RoomNumber($data->floor, $data->apartment),
+            number: new RoomNumber($data->floor, $data->door),
             status: $data->status,
         );
 
