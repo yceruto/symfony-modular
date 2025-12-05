@@ -25,23 +25,7 @@ class Room
     private(set) RoomNumber $number;
 
     #[Column]
-    public RoomStatus $status = RoomStatus::AVAILABLE {
-        get => $this->status;
-        set (RoomStatus $status) {
-            if ($this->status->equals($status)) {
-                return;
-            }
-
-            if (!$this->status->canTransitionTo($status)) {
-                throw InvalidRoomState::create(\sprintf('Room "%s" cannot transition from "%s" to "%s".', $this->number, $this->status->value, $status->value));
-            }
-
-            $this->status = $status;
-            $this->updatedAt = new \DateTimeImmutable();
-
-            $this->pushDomainEvent(new RoomUpdated($this->id->value, $status));
-        }
-    }
+    private(set) RoomStatus $status;
 
     #[Column]
     private(set) \DateTimeImmutable $createdAt;
@@ -60,6 +44,22 @@ class Room
         $this->createdAt = new \DateTimeImmutable();
 
         $this->pushDomainEvent(new RoomCreated($this->id->value));
+    }
+
+    public function updateStatus(RoomStatus $status): void
+    {
+        if ($this->status->equals($status)) {
+            return;
+        }
+
+        if (!$this->status->canTransitionTo($status)) {
+            throw InvalidRoomState::create(\sprintf('Room "%s" cannot transition from "%s" to "%s".', $this->number, $this->status->value, $status->value));
+        }
+
+        $this->status = $status;
+        $this->updatedAt = new \DateTimeImmutable();
+
+        $this->pushDomainEvent(new RoomUpdated($this->id->value, $status));
     }
 
     // rich model with behavior ...

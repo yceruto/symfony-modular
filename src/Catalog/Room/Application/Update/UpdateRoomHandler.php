@@ -19,7 +19,8 @@ final readonly class UpdateRoomHandler
     public function __invoke(UpdateRoom $command): Room
     {
         $room = $this->finder->findOne($command->id);
-        $room->status = $command->status;
+
+        $room->updateStatus($command->status);
 
         return $room;
     }
