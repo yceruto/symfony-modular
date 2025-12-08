@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Presentation\Http\Operation\Post;
+namespace App\Catalog\Room\Presentation\Http\Post;
 
 use App\Catalog\Room\Domain\Model\RoomStatus;
 use Symfony\Component\Validator\Constraints as Assert;

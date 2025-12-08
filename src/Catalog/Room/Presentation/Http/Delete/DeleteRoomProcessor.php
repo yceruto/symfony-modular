@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Presentation\Http\Operation\Delete;
+namespace App\Catalog\Room\Presentation\Http\Delete;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;

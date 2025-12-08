@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Presentation\Http\Operation\Get;
+namespace App\Catalog\Room\Presentation\Http\Get;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;

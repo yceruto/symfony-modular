@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Presentation\Http\Operation\GetCollection;
+namespace App\Catalog\Room\Presentation\Http\GetCollection;
 
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
@@ -18,9 +18,9 @@ final readonly class RoomCollectionProvider implements ProviderInterface
     }
 
     /**
-     * @return array<RoomItemView>|null
+     * @return array<RoomItemView>
      */
-    public function provide(Operation $operation, array $uriVariables = [], array $context = []): ?array
+    public function provide(Operation $operation, array $uriVariables = [], array $context = []): array
     {
         $collection = $this->queryBus->ask(new FindAllRooms());
 

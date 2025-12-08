@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__jetbrains__list_directory_tree",
-      "Bash(php bin/console:*)"
+      "Bash(php bin/console:*)",
+      "mcp__jetbrains__find_files_by_name_keyword"
     ],
     "deny": [],
     "ask": []

@@ -2,19 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Catalog\Room\Presentation\Http\Operation\Get;
+namespace App\Catalog\Room\Presentation\Http\GetCollection;
 
 use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Model\RoomStatus;
 
-final readonly class RoomView
+final readonly class RoomItemView
 {
     public function __construct(
         public string $id,
-        public RoomNumberView $number,
+        public string $number,
         public RoomStatus $status,
-        public \DateTimeImmutable $createdAt,
-        public ?\DateTimeImmutable $updatedAt = null,
     ) {
     }
 
@@ -22,10 +20,8 @@ final readonly class RoomView
     {
         return new self(
             $room->id->value,
-            RoomNumberView::fromModel($room->number),
+            (string) $room->number,
             $room->status,
-            $room->createdAt,
-            $room->updatedAt,
         );
     }
 }

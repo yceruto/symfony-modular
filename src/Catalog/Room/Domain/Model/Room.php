@@ -11,12 +11,14 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Embedded;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
+use OpenSolid\Domain\Error\Store\InMemoryErrorStoreTrait;
 use OpenSolid\Domain\Event\Store\InMemoryEventStoreTrait;
 
 #[Entity]
 class Room
 {
     use InMemoryEventStoreTrait;
+    use InMemoryErrorStoreTrait;
 
     #[Id, Column]
     private(set) RoomId $id;
