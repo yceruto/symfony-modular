@@ -35,6 +35,9 @@ abstract class SharedExtension extends AbstractExtension
         $builder->registerForAutoconfiguration(Id::class)
             ->addResourceTag('app.model.id');
 
+        $builder->registerForAutoconfiguration(self::class)
+            ->addTag('container.excluded', ['source' => 'because it\'s a container extension']);
+
         if (\is_dir($this->path.'/Infrastructure/Resources/config')) {
             $container->import($this->path.'/Infrastructure/Resources/config/{services.yaml}');
         }
