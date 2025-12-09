@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\AbstractExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-abstract class SharedExtension extends AbstractExtension
+abstract class AppExtension extends AbstractExtension
 {
     protected private(set) string $path {
         get {
