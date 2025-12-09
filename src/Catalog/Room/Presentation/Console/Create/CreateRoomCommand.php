@@ -23,8 +23,8 @@ final readonly class CreateRoomCommand
     public function __invoke(SymfonyStyle $io, #[MapInput] CreateRoomInput $input): int
     {
         $command = new CreateRoom(
-            new RoomId(),
-            new RoomNumber($input->floor, $input->door),
+            RoomId::create(),
+            RoomNumber::create($input->floor, $input->door),
             $input->status,
         );
 

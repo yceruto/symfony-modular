@@ -6,19 +6,14 @@ use Symfony\Component\Uid\Uuid;
 
 class Id implements \Stringable
 {
-    private(set) string $value;
-
-    public function __construct()
+    public static function create(): static
     {
-        $this->value = Uuid::v7()->toRfc4122();
+        return new static(Uuid::v7()->toRfc4122());
     }
 
     public static function fromString(string $value): static
     {
-        $self = new static();
-        $self->value = Uuid::fromString($value)->toRfc4122();
-
-        return $self;
+        return new static(Uuid::fromString($value)->toRfc4122());
     }
 
     public function equals(self $other): bool
@@ -29,5 +24,10 @@ class Id implements \Stringable
     public function __toString(): string
     {
         return $this->value;
+    }
+
+    private function __construct(
+        private(set) string $value,
+    ) {
     }
 }

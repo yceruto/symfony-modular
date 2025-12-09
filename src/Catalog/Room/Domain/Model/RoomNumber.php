@@ -10,17 +10,22 @@ use Doctrine\ORM\Mapping\Embeddable;
 #[Embeddable]
 class RoomNumber implements \Stringable
 {
-    public function __construct(
+    public static function create(int $floor, int $door): self
+    {
+        return new self($floor, $door);
+    }
+
+    public function __toString(): string
+    {
+        return \sprintf('%d%d', $this->floor, $this->door);
+    }
+
+    private function __construct(
         #[Column]
         private(set) int $floor,
 
         #[Column]
         private(set) int $door,
     ) {
-    }
-
-    public function __toString(): string
-    {
-        return \sprintf('%d%d', $this->floor, $this->door);
     }
 }

@@ -24,8 +24,8 @@ final readonly class CreateRoomProcessor implements ProcessorInterface
         assert($data instanceof CreateRoomPayload);
 
         $command = new CreateRoom(
-            id: $data->id ? RoomId::fromString($data->id) : new RoomId(),
-            number: new RoomNumber($data->floor, $data->door),
+            id: $data->id ? RoomId::fromString($data->id) : RoomId::create(),
+            number: RoomNumber::create($data->floor, $data->door),
             status: $data->status,
         );
 
