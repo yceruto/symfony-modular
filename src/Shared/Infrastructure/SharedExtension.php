@@ -15,9 +15,17 @@ abstract class SharedExtension extends AbstractExtension
         }
     }
 
+    protected private(set) string $namespace {
+        get {
+            return $this->namespace ??= preg_replace('/\\\\Infrastructure\\\\[^\\\\]+$/', '', $this::class);
+        }
+    }
+
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        if (\is_dir($this->path.'/Infrastructure/Resources/config/packages')) {
+        $this->configureDoctrineMapping($container);
+
+        if (is_dir($this->path.'/Infrastructure/Resources/config/packages')) {
             $container->import($this->path.'/Infrastructure/Resources/config/packages/*.yaml');
         }
     }
@@ -30,5 +38,22 @@ abstract class SharedExtension extends AbstractExtension
         if (\is_dir($this->path.'/Infrastructure/Resources/config')) {
             $container->import($this->path.'/Infrastructure/Resources/config/{services.yaml}');
         }
+    }
+
+    protected function configureDoctrineMapping(ContainerConfigurator $container): void
+    {
+        $container->extension('doctrine', [
+            'orm' => [
+                'mappings' => [
+                    $this->namespace => [
+                        'type' => 'attribute',
+                        'is_bundle' => false,
+                        'dir' => $this->path.'/Domain/Model',
+                        'prefix' => $this->namespace.'\\Domain\\Model',
+                        'alias' => $this->namespace.'\\Domain\\Model',
+                    ],
+                ],
+            ],
+        ], true);
     }
 }

@@ -122,7 +122,7 @@ Event subscribers live in `Infrastructure/` for cross-cutting concerns like logg
 
 ### API Platform Integration
 
-HTTP endpoints are defined via `#[ApiResource]` attributes in `Presentation/Http/Resource/`:
+HTTP endpoints are defined via `#[ApiResource]` attributes in `Presentation/Http/`:
 
 - Each operation specifies custom **Providers** (read) and **Processors** (write)
 - Operations map to Command/Query handlers via dedicated operation classes
@@ -134,14 +134,13 @@ HTTP endpoints are defined via `#[ApiResource]` attributes in `Presentation/Http
 The codebase uses strongly-typed value objects (e.g., `RoomId`, `RoomNumber`, `RoomStatus`) mapped to Doctrine via custom DBAL types:
 
 - Custom types defined in `Shared/Infrastructure/Persistence/Doctrine/DBAL/Type/`
-- Registered in module-specific `doctrine.yaml` configuration
 - Value objects enforce domain invariants and provide type safety
 
 ### Domain Model Patterns
 
 Domain models follow these patterns:
 
-1. **Rich Domain Models**: Business logic and validation lives in the domain model (e.g., `Room::updateStatus()`)
+1. **Rich Domain Models**: Business logic and validation lives in the domain model (e.g., `Room::setStatus()`)
 2. **Invariant Protection**: Models throw domain exceptions (e.g., `InvalidRoomState`) for invalid state transitions
 3. **Domain Events**: Models publish events for significant state changes
 4. **Value Objects**: Immutable, self-validating domain primitives

@@ -17,7 +17,7 @@ final readonly class IdTypePass implements CompilerPassInterface
 
         $types = [];
         foreach ($modelIds as $id) {
-            if ($id === Id::class) {
+            if (Id::class === $id) {
                 continue;
             }
 
