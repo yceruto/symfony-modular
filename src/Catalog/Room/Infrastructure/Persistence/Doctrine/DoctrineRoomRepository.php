@@ -9,7 +9,7 @@ use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Domain\Repository\RoomRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
-class DoctrineRoomRepository implements RoomRepository
+final readonly class DoctrineRoomRepository implements RoomRepository
 {
     public function __construct(
         private EntityManagerInterface $entityManager,

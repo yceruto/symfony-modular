@@ -13,7 +13,7 @@ final readonly class DeleteRoomHandler
 {
     public function __construct(
         private RoomFinder $finder,
-        private RoomRepository $repository,
+        private RoomRepository $rooms,
     ) {
     }
 
@@ -21,6 +21,6 @@ final readonly class DeleteRoomHandler
     {
         $room = $this->finder->findOne($command->id);
 
-        $this->repository->remove($room);
+        $this->rooms->remove($room);
     }
 }

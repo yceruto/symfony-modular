@@ -48,7 +48,7 @@ class Room
         $this->pushDomainEvent(new RoomCreated($this->id->value));
     }
 
-    public function updateStatus(RoomStatus $status): void
+    public function setStatus(RoomStatus $status): void
     {
         if ($this->status->equals($status)) {
             return;

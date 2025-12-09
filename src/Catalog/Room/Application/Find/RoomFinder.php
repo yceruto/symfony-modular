@@ -12,17 +12,20 @@ use App\Catalog\Room\Domain\Repository\RoomRepository;
 final readonly class RoomFinder
 {
     public function __construct(
-        private RoomRepository $repository,
+        private RoomRepository $rooms,
     ) {
     }
 
     public function findOne(RoomId $id): Room
     {
-        return $this->repository->ofId($id) ?? throw RoomNotFound::create();
+        return $this->rooms->ofId($id) ?? throw RoomNotFound::create();
     }
 
+    /**
+     * @return iterable<Room>
+     */
     public function findAll(): iterable
     {
-        return $this->repository->all();
+        return $this->rooms->all();
     }
 }

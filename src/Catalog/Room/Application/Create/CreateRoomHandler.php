@@ -12,7 +12,7 @@ use OpenSolid\CqsBundle\Attribute\AsCommandHandler;
 final readonly class CreateRoomHandler
 {
     public function __construct(
-        private RoomRepository $repository,
+        private RoomRepository $rooms,
     ) {
     }
 
@@ -24,7 +24,7 @@ final readonly class CreateRoomHandler
             $command->status,
         );
 
-        $this->repository->add($room);
+        $this->rooms->add($room);
 
         return $room;
     }

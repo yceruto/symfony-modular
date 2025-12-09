@@ -26,8 +26,8 @@ final readonly class DeleteRoomCommand
 
         try {
             $this->commandBus->execute(new DeleteRoom($roomId));
-        } catch (RoomNotFound $exception) {
-            $io->error($exception->getMessage());
+        } catch (RoomNotFound) {
+            $io->error(\sprintf('Room with id "%s" not found.', $id));
 
             return 1;
         }
