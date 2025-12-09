@@ -2,12 +2,11 @@
 
 namespace App\Shared\Infrastructure;
 
-use App\Shared\Domain\Model\Id;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\AbstractExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-abstract class AppExtension extends AbstractExtension
+abstract class ModuleExtension extends AbstractExtension
 {
     protected private(set) string $path {
         get {
@@ -32,12 +31,6 @@ abstract class AppExtension extends AbstractExtension
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        $builder->registerForAutoconfiguration(Id::class)
-            ->addResourceTag('app.model.id');
-
-        $builder->registerForAutoconfiguration(self::class)
-            ->addTag('container.excluded', ['source' => 'because it\'s a container extension']);
-
         if (\is_dir($this->path.'/Infrastructure/Resources/config')) {
             $container->import($this->path.'/Infrastructure/Resources/config/{services.yaml}');
         }
@@ -45,6 +38,10 @@ abstract class AppExtension extends AbstractExtension
 
     protected function configureDoctrineMapping(ContainerConfigurator $container): void
     {
+        if (!\is_dir($this->path.'/Domain/Model')) {
+            return;
+        }
+
         $container->extension('doctrine', [
             'orm' => [
                 'mappings' => [

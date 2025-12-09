@@ -13,17 +13,21 @@ final readonly class IdTypePass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        $modelIds = array_keys($container->findTaggedResourceIds('app.model.id'));
+        if (!$container->hasParameter('doctrine.dbal.connection_factory.types')) {
+            return;
+        }
 
-        $types = [];
+        $typeDefinition = $container->getParameter('doctrine.dbal.connection_factory.types');
+        $modelIds = array_keys($container->findTaggedResourceIds('app.domain.model.id'));
+
         foreach ($modelIds as $id) {
             if (Id::class === $id) {
                 continue;
             }
 
-            $types[$id] = IdType::class;
+            $typeDefinition[$id] = ['class' => IdType::class];
         }
 
-        $container->setParameter('app.persistence.doctrine.dbal.types', $types);
+        $container->setParameter('doctrine.dbal.connection_factory.types', $typeDefinition);
     }
 }

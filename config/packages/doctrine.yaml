@@ -10,9 +10,15 @@ doctrine:
     orm:
         validate_xml_mapping: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
-        auto_mapping: true
         controller_resolver:
             auto_mapping: false
+        mappings:
+            App\Shared:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Shared/Domain/Model'
+                prefix: App\Shared\Domain\Model
+                alias: App\Shared\Domain\Model
 
 when@test:
     doctrine:

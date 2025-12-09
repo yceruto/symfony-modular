@@ -2,8 +2,8 @@
 
 namespace App\Catalog\Room\Infrastructure;
 
-use App\Shared\Infrastructure\AppExtension;
+use App\Shared\Infrastructure\ModuleExtension;
 
-class RoomExtension extends AppExtension
+class RoomExtension extends ModuleExtension
 {
 }
