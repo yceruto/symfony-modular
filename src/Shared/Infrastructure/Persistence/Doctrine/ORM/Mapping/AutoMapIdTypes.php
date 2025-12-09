@@ -8,8 +8,13 @@ use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
 
 #[AsDoctrineListener(Events::loadClassMetadata)]
-class AutoMapIdTypes
+final readonly class AutoMapIdTypes
 {
+    public function __construct(
+        private string $idClass = Id::class,
+    ) {
+    }
+
     public function __invoke(LoadClassMetadataEventArgs $args): void
     {
         $classMetadata = $args->getClassMetadata();
@@ -24,7 +29,7 @@ class AutoMapIdTypes
 
             $type = $reflectionClass->getProperty($fieldName)->getType()?->getName();
 
-            if (!$type || !\class_exists($type) || !\is_subclass_of($type, Id::class)) {
+            if (!$type || !\class_exists($type) || !\is_subclass_of($type, $this->idClass)) {
                 continue;
             }
 

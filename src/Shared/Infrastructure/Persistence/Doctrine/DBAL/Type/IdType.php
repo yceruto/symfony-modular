@@ -19,14 +19,14 @@ class IdType extends Type
 
     public function convertToPHPValue(mixed $value, AbstractPlatform $platform): ?Id
     {
-        $class = $this->getClass();
+        $class = $this->getIdClass();
 
         if (\is_a($value, $class) || null === $value) {
             return $value;
         }
 
         if (!\is_string($value)) {
-            throw InvalidType::new($value, $class, ['null', 'string', Id::class]);
+            throw InvalidType::new($value, $class, ['null', 'string', $class]);
         }
 
         try {
@@ -38,7 +38,7 @@ class IdType extends Type
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
-        $class = $this->getClass();
+        $class = $this->getIdClass();
 
         if (\is_a($value, $class)) {
             return $value->value;
@@ -49,7 +49,7 @@ class IdType extends Type
         }
 
         if (!\is_string($value)) {
-            throw InvalidType::new($value, $class, ['null', 'string', Id::class]);
+            throw InvalidType::new($value, $class, ['null', 'string', $class]);
         }
 
         try {
@@ -62,7 +62,7 @@ class IdType extends Type
     /**
      * @return class-string<Id>
      */
-    private function getClass(): string
+    private function getIdClass(): string
     {
         return self::lookupName($this);
     }

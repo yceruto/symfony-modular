@@ -18,8 +18,8 @@ final readonly class IdTypePass implements CompilerPassInterface
         }
 
         $typeDefinition = $container->getParameter('doctrine.dbal.connection_factory.types');
-        $modelIds = array_keys($container->findTaggedResourceIds('app.domain.model.id'));
 
+        $modelIds = array_keys($container->findTaggedResourceIds('app.domain.model.id'));
         foreach ($modelIds as $id) {
             if (Id::class === $id) {
                 continue;
