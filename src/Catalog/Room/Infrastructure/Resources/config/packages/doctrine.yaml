@@ -1,7 +1,4 @@
 doctrine:
-    dbal:
-        types:
-            App\Catalog\Room\Domain\Model\RoomId: App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type\UidType
     orm:
         mappings:
             Catalog\Room:

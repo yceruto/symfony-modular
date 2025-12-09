@@ -10,7 +10,7 @@ use Doctrine\DBAL\Types\Exception\InvalidType;
 use Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use Doctrine\DBAL\Types\Type;
 
-class UidType extends Type
+class IdType extends Type
 {
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {

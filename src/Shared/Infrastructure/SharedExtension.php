@@ -2,6 +2,7 @@
 
 namespace App\Shared\Infrastructure;
 
+use App\Shared\Domain\Model\Id;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\AbstractExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -23,6 +24,9 @@ abstract class SharedExtension extends AbstractExtension
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        $builder->registerForAutoconfiguration(Id::class)
+            ->addResourceTag('app.model.id');
+
         if (\is_dir($this->path.'/Infrastructure/Resources/config')) {
             $container->import($this->path.'/Infrastructure/Resources/config/{services.yaml}');
         }
