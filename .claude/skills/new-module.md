@@ -55,18 +55,6 @@ class {Module}Extension extends ModuleExtension
 }
 ```
 
-**Register the extension in:** `src/Kernel.php`
-```php
-// src/Kernel.php
-use App\{Context}\{Module}\Infrastructure\{Module}Extension;
-
-protected function build(ContainerBuilder $container): void
-{
-   // ... existing code
-   $container->registerExtension(new {Module}Extension());
-}
-```
-
 ### 2. Entity ID (Required)
 
 **File:** `src/{Context}/{Module}/Domain/Model/{Entity}Id.php`
