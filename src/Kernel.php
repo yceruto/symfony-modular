@@ -2,7 +2,9 @@
 
 namespace App;
 
-use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\IdTypePass;
+use App\Shared\Domain\Model\EntityId;
+use App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type\UidType;
+use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\DbalTypesPass;
 use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\MergeExtensionConfigurationPass;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -21,6 +23,9 @@ class Kernel extends BaseKernel
 
     protected function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new IdTypePass());
+        $container->registerForAutoconfiguration(EntityId::class)
+            ->addResourceTag('app.domain.model.id', ['type' => UidType::class]);
+
+        $container->addCompilerPass(new DbalTypesPass(['app.domain.model.id']));
     }
 }

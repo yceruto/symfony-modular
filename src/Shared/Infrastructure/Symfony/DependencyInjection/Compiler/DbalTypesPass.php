@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler;
 
-use App\Shared\Domain\Model\Id;
-use App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type\IdType;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final readonly class IdTypePass implements CompilerPassInterface
+final readonly class DbalTypesPass implements CompilerPassInterface
 {
+    public function __construct(
+        private array $resourceIds,
+    ) {
+    }
+
     public function process(ContainerBuilder $container): void
     {
         if (!$container->hasParameter('doctrine.dbal.connection_factory.types')) {
@@ -19,13 +22,14 @@ final readonly class IdTypePass implements CompilerPassInterface
 
         $typeDefinition = $container->getParameter('doctrine.dbal.connection_factory.types');
 
-        $modelIds = array_keys($container->findTaggedResourceIds('app.domain.model.id'));
-        foreach ($modelIds as $id) {
-            if (Id::class === $id) {
-                continue;
-            }
+        foreach ($this->resourceIds as $resourceId) {
+            foreach ($container->findTaggedResourceIds($resourceId, false) as $id => $attributes) {
+                if (!\class_exists($id)) {
+                    continue;
+                }
 
-            $typeDefinition[$id] = ['class' => IdType::class];
+                $typeDefinition[$id] = ['class' => $attributes[0]['type']];
+            }
         }
 
         $container->setParameter('doctrine.dbal.connection_factory.types', $typeDefinition);

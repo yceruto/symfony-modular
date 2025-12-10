@@ -2,7 +2,7 @@
 
 namespace App\Shared\Infrastructure\Persistence\Doctrine\ORM\Mapping;
 
-use App\Shared\Domain\Model\Id;
+use App\Shared\Domain\Model\Uid;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
@@ -14,7 +14,7 @@ final readonly class AutoMapFieldType
      * @param array<class-string> $types
      */
     public function __construct(
-        private array $types = [Id::class],
+        private array $types = [Uid::class],
     ) {
     }
 
@@ -30,15 +30,15 @@ final readonly class AutoMapFieldType
                 continue;
             }
 
-            $type = $reflectionClass->getProperty($fieldName)->getType()?->getName();
+            $propertyType = $reflectionClass->getProperty($fieldName)->getType()?->getName();
 
-            if (!$type || !\class_exists($type)) {
+            if (!$propertyType || !\class_exists($propertyType)) {
                 continue;
             }
 
-            foreach ($this->types as $superType) {
-                if (\is_subclass_of($type, $superType)) {
-                    $classMetadata->fieldMappings[$fieldName]->type = $type;
+            foreach ($this->types as $type) {
+                if (\is_subclass_of($propertyType, $type)) {
+                    $classMetadata->fieldMappings[$fieldName]->type = $propertyType;
 
                     continue 2;
                 }

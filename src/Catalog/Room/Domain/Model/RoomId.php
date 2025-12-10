@@ -2,9 +2,9 @@
 
 namespace App\Catalog\Room\Domain\Model;
 
-use App\Shared\Domain\Model\Id;
+use App\Shared\Domain\Model\Uid;
 
-class RoomId extends Id
+class RoomId extends Uid
 {
     public function equals(self $other): bool
     {

@@ -4,9 +4,5 @@ services:
         autowire: true
         autoconfigure: true
 
-    _instanceof:
-        App\Shared\Domain\Model\Id:
-            resource_tags: ['app.domain.model.id']
-
     App\:
         resource: '../src/'

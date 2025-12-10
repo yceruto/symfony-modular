@@ -4,7 +4,7 @@ namespace App\Shared\Domain\Model;
 
 use Symfony\Component\Uid\Uuid;
 
-class Id implements \Stringable
+abstract class Uid implements EntityId
 {
     public static function create(): static
     {

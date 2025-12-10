@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type;
 
-use App\Shared\Domain\Model\Id;
+use App\Shared\Domain\Model\Uid;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Exception\InvalidType;
 use Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use Doctrine\DBAL\Types\Type;
 
-class IdType extends Type
+class UidType extends Type
 {
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
         return $platform->getGuidTypeDeclarationSQL($column);
     }
 
-    public function convertToPHPValue(mixed $value, AbstractPlatform $platform): ?Id
+    public function convertToPHPValue(mixed $value, AbstractPlatform $platform): ?Uid
     {
         $class = $this->getIdClass();
 
@@ -60,7 +60,7 @@ class IdType extends Type
     }
 
     /**
-     * @return class-string<Id>
+     * @return class-string<Uid>
      */
     private function getIdClass(): string
     {

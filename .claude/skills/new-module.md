@@ -64,7 +64,7 @@ class {Module}Extension extends ModuleExtension
 
 namespace App\{Context}\{Module}\Domain\Model;
 
-use App\Shared\Domain\Model\Id;
+use App\Shared\Domain\Model\Uid;
 
 class {Entity}Id extends Id
 {
