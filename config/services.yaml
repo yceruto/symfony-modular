@@ -8,10 +8,5 @@ services:
         App\Shared\Domain\Model\Id:
             resource_tags: ['app.domain.model.id']
 
-        App\Shared\Infrastructure\ModuleExtension:
-            resource_tags:
-                - name: 'container.excluded'
-                  source: "because it's a container extension"
-
     App\:
         resource: '../src/'

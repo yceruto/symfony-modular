@@ -21,7 +21,7 @@ class IdType extends Type
     {
         $class = $this->getIdClass();
 
-        if (\is_a($value, $class) || null === $value) {
+        if ($value instanceof $class || null === $value) {
             return $value;
         }
 
@@ -40,7 +40,7 @@ class IdType extends Type
     {
         $class = $this->getIdClass();
 
-        if (\is_a($value, $class)) {
+        if ($value instanceof $class) {
             return $value->value;
         }
 
