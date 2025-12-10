@@ -33,6 +33,11 @@ src/{Context}/{Module}/
 │   ├── Persistence/
 │   │   └── Doctrine/
 │   │       └── Doctrine{Entity}Repository.php
+│   ├── Resources/
+│   │   └── config/
+│   │       └── doctrine/
+│   │           └── mapping/
+│   │               └── {Entity}.orm.xml
 │   └── {Module}Extension.php
 └── Presentation/          # HTTP/Console - create empty initially
 ```
@@ -86,17 +91,9 @@ declare(strict_types=1);
 
 namespace App\{Context}\{Module}\Domain\Model;
 
-use Doctrine\ORM\Mapping\Column;
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\Id;
-
-#[Entity]
 class {Entity}
 {
-    #[Id, Column]
     private(set) {Entity}Id $id;
-
-    #[Column]
     private(set) \DateTimeImmutable $createdAt;
 
     public function __construct({Entity}Id $id)
@@ -107,7 +104,25 @@ class {Entity}
 }
 ```
 
-### 4. Repository Interface (Required)
+### 4. Doctrine XML Mapping (Required)
+
+**File:** `src/{Context}/{Module}/Infrastructure/Resources/config/doctrine/mapping/{Entity}.orm.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\{Context}\{Module}\Domain\Model\{Entity}">
+        <id name="id"/>
+        <field name="createdAt"/>
+    </entity>
+</doctrine-mapping>
+```
+
+### 5. Repository Interface (Required)
 
 **File:** `src/{Context}/{Module}/Domain/Repository/{Entity}Repository.php`
 
@@ -132,7 +147,7 @@ interface {Entity}Repository
 }
 ```
 
-### 5. Doctrine Repository Adapter (Required)
+### 6. Doctrine Repository Adapter (Required)
 
 **File:** `src/{Context}/{Module}/Infrastructure/Persistence/Doctrine/Doctrine{Entity}Repository.php`
 
@@ -202,5 +217,6 @@ This creates:
 - `src/Catalog/Product/Domain/Model/ProductId.php`
 - `src/Catalog/Product/Domain/Repository/ProductRepository.php`
 - `src/Catalog/Product/Infrastructure/Persistence/Doctrine/DoctrineProductRepository.php`
+- `src/Catalog/Product/Infrastructure/Resources/config/doctrine/mapping/Product.orm.xml`
 - `src/Catalog/Product/Infrastructure/ProductExtension.php`
 - `src/Catalog/Product/Presentation/`
