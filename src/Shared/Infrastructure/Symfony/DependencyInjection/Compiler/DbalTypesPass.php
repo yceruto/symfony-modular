@@ -4,14 +4,42 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler;
 
+use Doctrine\DBAL\Types\Type;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final readonly class DbalTypesPass implements CompilerPassInterface
+class DbalTypesPass implements CompilerPassInterface
 {
+    private array $resourceIds = [];
+
     public function __construct(
-        private array $resourceIds,
+        private readonly ContainerBuilder $container,
     ) {
+    }
+
+    /**
+     * @param class-string<Type> $dbalType The DBAL type class
+     */
+    public function registerForAutoconfiguration(string $dbalType): self
+    {
+        if (!\class_exists($dbalType)) {
+            throw new \LogicException(\sprintf('Class "%s" does not exist.', $dbalType));
+        }
+
+        $methodReturnType = new \ReflectionClass($dbalType)->getMethod('convertToPHPValue')->getReturnType();
+
+        if (!$methodReturnType instanceof \ReflectionNamedType) {
+            throw new \LogicException(\sprintf(''));
+        }
+
+        $class = $methodReturnType->getName();
+
+        $this->container->registerForAutoconfiguration($class)
+            ->addResourceTag($class, ['type' => $dbalType]);
+
+        $this->resourceIds[] = $class;
+
+        return $this;
     }
 
     public function process(ContainerBuilder $container): void
