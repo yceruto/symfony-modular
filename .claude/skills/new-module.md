@@ -20,7 +20,7 @@ Ask the user for:
 
 ```
 src/{Context}/{Module}/
-├── Application/           # Use cases (Commands/Queries) - empty initially
+├── Application/           # Use cases (Commands/Queries) - create empty initially
 ├── Domain/
 │   ├── Error/            # Domain exceptions - empty initially
 │   ├── Event/            # Domain events - empty initially
@@ -34,7 +34,7 @@ src/{Context}/{Module}/
 │   │   └── Doctrine/
 │   │       └── Doctrine{Entity}Repository.php
 │   └── {Module}Extension.php
-└── Presentation/          # HTTP/Console - empty initially
+└── Presentation/          # HTTP/Console - create empty initially
 ```
 
 ## Files to Generate
@@ -46,9 +46,11 @@ src/{Context}/{Module}/
 ```php
 <?php
 
+declare(strict_types=1);
+
 namespace App\{Context}\{Module}\Infrastructure;
 
-use App\Shared\Infrastructure\ModuleExtension;
+use OpenSolid\Shared\Infrastructure\Symfony\Module\ModuleExtension;
 
 class {Module}Extension extends ModuleExtension
 {
@@ -62,11 +64,13 @@ class {Module}Extension extends ModuleExtension
 ```php
 <?php
 
+declare(strict_types=1);
+
 namespace App\{Context}\{Module}\Domain\Model;
 
 use App\Shared\Domain\Model\Uid;
 
-class {Entity}Id extends Id
+class {Entity}Id extends Uid
 {
 }
 ```
@@ -85,13 +89,10 @@ namespace App\{Context}\{Module}\Domain\Model;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Id;
-use OpenSolid\Domain\Event\Store\InMemoryEventStoreTrait;
 
 #[Entity]
 class {Entity}
 {
-    use InMemoryEventStoreTrait;
-
     #[Id, Column]
     private(set) {Entity}Id $id;
 
