@@ -2,7 +2,7 @@
 
 namespace App\Catalog\Room\Infrastructure;
 
-use App\Shared\Infrastructure\ModuleExtension;
+use OpenSolid\Shared\Infrastructure\Symfony\Module\ModuleExtension;
 
 class RoomExtension extends ModuleExtension
 {

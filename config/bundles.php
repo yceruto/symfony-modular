@@ -11,4 +11,5 @@ return [
     OpenSolid\CqsBundle\CqsBundle::class => ['all' => true],
     OpenSolid\DomainBundle\DomainBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
+    OpenSolid\Shared\SharedBundle::class => ['all' => true],
 ];

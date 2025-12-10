@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type;
 
 use App\Shared\Domain\Model\Uid;
-use App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Attribute\AsGenericType;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Exception\InvalidType;
 use Doctrine\DBAL\Types\Exception\ValueNotConvertible;
 use Doctrine\DBAL\Types\Type;
+use OpenSolid\Shared\Infrastructure\Persistence\Doctrine\DBAL\Attribute\AsGenericType;
 
 #[AsGenericType]
 class UidType extends Type

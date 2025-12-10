@@ -67,6 +67,9 @@
     "open-solid/domain-bundle": {
         "version": "v1.0.5"
     },
+    "open-solid/shared": {
+        "version": "dev-main"
+    },
     "symfony/console": {
         "version": "7.4",
         "recipe": {
