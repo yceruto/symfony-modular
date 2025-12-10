@@ -2,19 +2,18 @@
 
 namespace App\Shared\Infrastructure\Persistence\Doctrine\ORM\Mapping;
 
-use App\Shared\Domain\Model\Uid;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
 
 #[AsDoctrineListener(Events::loadClassMetadata)]
-final readonly class AutoMapFieldType
+final readonly class AutoMapGenericTypes
 {
     /**
      * @param array<class-string> $types
      */
     public function __construct(
-        private array $types = [Uid::class],
+        private array $types = [],
     ) {
     }
 

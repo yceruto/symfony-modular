@@ -2,8 +2,7 @@
 
 namespace App;
 
-use App\Shared\Infrastructure\Persistence\Doctrine\DBAL\Type\UidType;
-use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\DbalTypesPass;
+use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\RegisterGenericDbalTypesPass;
 use App\Shared\Infrastructure\Symfony\DependencyInjection\Compiler\MergeExtensionConfigurationPass;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -22,9 +21,6 @@ class Kernel extends BaseKernel
 
     protected function build(ContainerBuilder $container): void
     {
-        $dbalTypesPass = new DbalTypesPass($container)
-            ->registerForAutoconfiguration(UidType::class);
-
-        $container->addCompilerPass($dbalTypesPass);
+        $container->addCompilerPass(new RegisterGenericDbalTypesPass($container));
     }
 }

@@ -24,7 +24,7 @@ abstract class ModuleExtension extends AbstractExtension
     {
         $this->configureDoctrineMapping($container);
 
-        if (is_dir($this->path.'/Infrastructure/Resources/config/packages')) {
+        if (\is_dir($this->path.'/Infrastructure/Resources/config/packages')) {
             $container->import($this->path.'/Infrastructure/Resources/config/packages/*.yaml');
         }
     }
