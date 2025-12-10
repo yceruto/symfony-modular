@@ -21,7 +21,7 @@ final readonly class CreateRoomHandler
         $room = new Room(
             $command->id,
             $command->number,
-            $command->status,
+            $command->state,
         );
 
         $this->rooms->add($room);

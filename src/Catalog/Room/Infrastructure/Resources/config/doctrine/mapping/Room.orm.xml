@@ -7,7 +7,7 @@
     <entity name="App\Catalog\Room\Domain\Model\Room">
         <id name="id"/>
         <embedded name="number"/>
-        <field name="status"/>
+        <field name="state"/>
         <field name="createdAt"/>
         <field name="updatedAt" nullable="true"/>
     </entity>

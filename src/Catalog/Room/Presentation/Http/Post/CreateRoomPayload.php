@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Presentation\Http\Post;
 
-use App\Catalog\Room\Domain\Model\RoomStatus;
+use App\Catalog\Room\Domain\Model\RoomState;
 use Symfony\Component\Validator\Constraints as Assert;
 
 final class CreateRoomPayload
@@ -21,5 +21,5 @@ final class CreateRoomPayload
     public int $door;
 
     #[Assert\NotNull]
-    public RoomStatus $status;
+    public RoomState $state;
 }

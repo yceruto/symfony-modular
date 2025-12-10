@@ -24,7 +24,7 @@ final readonly class PatchRoomProcessor implements ProcessorInterface
 
         $command = new UpdateRoom(
             id: RoomId::fromString($uriVariables['id']),
-            status: $data->status,
+            state: $data->state,
         );
 
         $room = $this->commandBus->execute($command);

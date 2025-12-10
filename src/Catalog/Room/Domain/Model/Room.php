@@ -17,37 +17,37 @@ class Room
 
     private(set) RoomId $id;
     private(set) RoomNumber $number;
-    private(set) RoomStatus $status;
+    private(set) RoomState $state;
     private(set) \DateTimeImmutable $createdAt;
     private(set) ?\DateTimeImmutable $updatedAt = null;
 
     public function __construct(
         RoomId $id,
         RoomNumber $number,
-        RoomStatus $status,
+        RoomState $state,
     ) {
         $this->id = $id;
         $this->number = $number;
-        $this->status = $status;
+        $this->state = $state;
         $this->createdAt = new \DateTimeImmutable();
 
         $this->pushDomainEvent(new RoomCreated($this->id->value));
     }
 
-    public function setStatus(RoomStatus $status): void
+    public function setState(RoomState $state): void
     {
-        if ($this->status->equals($status)) {
+        if ($this->state->equals($state)) {
             return;
         }
 
-        if (!$this->status->canTransitionTo($status)) {
-            throw InvalidRoomState::create(\sprintf('Room "%s" cannot transition from "%s" to "%s".', $this->number, $this->status->value, $status->value));
+        if (!$this->state->canTransitionTo($state)) {
+            throw InvalidRoomState::create(\sprintf('Room "%s" cannot transition from "%s" to "%s".', $this->number, $this->state->value, $state->value));
         }
 
-        $this->status = $status;
+        $this->state = $state;
         $this->updatedAt = new \DateTimeImmutable();
 
-        $this->pushDomainEvent(new RoomUpdated($this->id->value, $status));
+        $this->pushDomainEvent(new RoomUpdated($this->id->value, $state));
     }
 
     // rich model with behavior ...

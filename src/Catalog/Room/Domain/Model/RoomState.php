@@ -2,7 +2,7 @@
 
 namespace App\Catalog\Room\Domain\Model;
 
-enum RoomStatus: string
+enum RoomState: string
 {
     case AVAILABLE = 'available';
     case OCCUPIED = 'occupied';
@@ -28,13 +28,13 @@ enum RoomStatus: string
         return $this === $other;
     }
 
-    public function canTransitionTo(self $status): bool
+    public function canTransitionTo(self $state): bool
     {
         $feasible = match ($this) {
             self::AVAILABLE => [self::OCCUPIED, self::UNDER_MAINTENANCE],
             self::OCCUPIED, self::UNDER_MAINTENANCE => [self::AVAILABLE],
         };
 
-        return \in_array($status, $feasible, true);
+        return \in_array($state, $feasible, true);
     }
 }

@@ -131,7 +131,7 @@ HTTP endpoints are defined via `#[ApiResource]` attributes in `Presentation/Http
 
 ### Value Objects & Custom Types
 
-The codebase uses strongly-typed value objects (e.g., `RoomId`, `RoomNumber`, `RoomStatus`) mapped to Doctrine via custom DBAL types:
+The codebase uses strongly-typed value objects (e.g., `RoomId`, `RoomNumber`, `RoomState`) mapped to Doctrine via custom DBAL types:
 
 - Custom types defined in `Shared/Infrastructure/Persistence/Doctrine/DBAL/Type/`
 - Value objects enforce domain invariants and provide type safety
@@ -140,7 +140,7 @@ The codebase uses strongly-typed value objects (e.g., `RoomId`, `RoomNumber`, `R
 
 Domain models follow these patterns:
 
-1. **Rich Domain Models**: Business logic and validation lives in the domain model (e.g., `Room::setStatus()`)
+1. **Rich Domain Models**: Business logic and validation lives in the domain model (e.g., `Room::setState()`)
 2. **Invariant Protection**: Models throw domain exceptions (e.g., `InvalidRoomState`) for invalid state transitions
 3. **Domain Events**: Models publish events for significant state changes
 4. **Value Objects**: Immutable, self-validating domain primitives

@@ -6,7 +6,7 @@ namespace App\Catalog\Room\Application\Update;
 
 use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Model\RoomId;
-use App\Catalog\Room\Domain\Model\RoomStatus;
+use App\Catalog\Room\Domain\Model\RoomState;
 use OpenSolid\Cqs\Command\Command;
 
 /**
@@ -15,8 +15,8 @@ use OpenSolid\Cqs\Command\Command;
 final readonly class UpdateRoom extends Command
 {
     public function __construct(
-        public RoomId $id,
-        public RoomStatus $status,
+        public RoomId    $id,
+        public RoomState $state,
     ) {
     }
 }

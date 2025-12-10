@@ -2773,21 +2773,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-solid/shared.git",
-                "reference": "43474d96accd950a2f906cc236b0612e2ab91005"
+                "reference": "36a532bd9170e9452664102131518b952cdf306d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/shared/zipball/43474d96accd950a2f906cc236b0612e2ab91005",
-                "reference": "43474d96accd950a2f906cc236b0612e2ab91005",
+                "url": "https://api.github.com/repos/open-solid/shared/zipball/36a532bd9170e9452664102131518b952cdf306d",
+                "reference": "36a532bd9170e9452664102131518b952cdf306d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4",
-                "symfony/framework-bundle": "^7.0|^8.0"
+                "php": ">=8.4"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "^3.1",
-                "doctrine/orm": "^3.5"
+                "doctrine/orm": "^3.5",
+                "phpunit/phpunit": "^12.5",
+                "symfony/framework-bundle": "^8.0"
             },
             "default-branch": true,
             "type": "symfony-bundle",
@@ -2805,7 +2806,7 @@
                 "issues": "https://github.com/open-solid/shared/issues",
                 "source": "https://github.com/open-solid/shared/tree/main"
             },
-            "time": "2025-12-10T21:57:25+00:00"
+            "time": "2025-12-10T22:22:00+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

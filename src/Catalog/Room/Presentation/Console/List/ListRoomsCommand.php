@@ -23,11 +23,11 @@ final readonly class ListRoomsCommand
 
         $rows = [];
         foreach ($collection->items as $room) {
-            $rows[] = [$room->id, $room->number, $room->status->value];
+            $rows[] = [$room->id, $room->number, $room->state->value];
         }
 
         $io->title('Registered rooms');
-        $io->table(['ID', 'Number', 'Status'], $rows);
+        $io->table(['ID', 'Number', 'State'], $rows);
 
         return 0;
     }

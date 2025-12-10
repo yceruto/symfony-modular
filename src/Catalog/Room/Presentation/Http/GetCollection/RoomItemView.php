@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Catalog\Room\Presentation\Http\GetCollection;
 
 use App\Catalog\Room\Domain\Model\Room;
-use App\Catalog\Room\Domain\Model\RoomStatus;
+use App\Catalog\Room\Domain\Model\RoomState;
 
 final readonly class RoomItemView
 {
     public function __construct(
         public string $id,
         public string $number,
-        public RoomStatus $status,
+        public RoomState $state,
     ) {
     }
 
@@ -21,7 +21,7 @@ final readonly class RoomItemView
         return new self(
             $room->id->value,
             (string) $room->number,
-            $room->status,
+            $room->state,
         );
     }
 }

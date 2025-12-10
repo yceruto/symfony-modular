@@ -7,7 +7,7 @@ namespace App\Catalog\Room\Application\Create;
 use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Domain\Model\RoomNumber;
-use App\Catalog\Room\Domain\Model\RoomStatus;
+use App\Catalog\Room\Domain\Model\RoomState;
 use OpenSolid\Cqs\Command\Command;
 
 /**
@@ -18,7 +18,7 @@ final readonly class CreateRoom extends Command
     public function __construct(
         public RoomId $id,
         public RoomNumber $number,
-        public RoomStatus $status,
+        public RoomState $state,
     ) {
     }
 }

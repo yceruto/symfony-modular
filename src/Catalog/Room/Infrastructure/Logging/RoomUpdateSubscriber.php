@@ -18,6 +18,6 @@ final readonly class RoomUpdateSubscriber
 
     public function __invoke(RoomUpdated $event): void
     {
-        $this->logger->info(\sprintf('Room "%s" has been updated with status "%s".', $event->aggregateId, $event->status->value));
+        $this->logger->info(\sprintf('Room "%s" has been updated with state "%s".', $event->aggregateId, $event->state->value));
     }
 }

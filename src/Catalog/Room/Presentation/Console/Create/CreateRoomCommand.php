@@ -25,7 +25,7 @@ final readonly class CreateRoomCommand
         $command = new CreateRoom(
             RoomId::create(),
             RoomNumber::create($input->floor, $input->door),
-            $input->status,
+            $input->state,
         );
 
         $room = $this->commandBus->execute($command);

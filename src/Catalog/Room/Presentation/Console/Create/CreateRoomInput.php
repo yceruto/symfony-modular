@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Presentation\Console\Create;
 
-use App\Catalog\Room\Domain\Model\RoomStatus;
+use App\Catalog\Room\Domain\Model\RoomState;
 use Symfony\Component\Console\Attribute\Argument;
 use Symfony\Component\Console\Attribute\Ask;
 
@@ -16,6 +16,6 @@ class CreateRoomInput
     #[Argument, Ask('The door of the room')]
     public int $door;
 
-    #[Argument, Ask('The status of the room')]
-    public RoomStatus $status;
+    #[Argument, Ask('The state of the room (available, occupied, under-maintenance)')]
+    public RoomState $state;
 }
