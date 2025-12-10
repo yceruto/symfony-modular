@@ -2773,12 +2773,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-solid/shared.git",
-                "reference": "fa95c3bb992733cdce4135adcb5347585a46f280"
+                "reference": "43474d96accd950a2f906cc236b0612e2ab91005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/shared/zipball/fa95c3bb992733cdce4135adcb5347585a46f280",
-                "reference": "fa95c3bb992733cdce4135adcb5347585a46f280",
+                "url": "https://api.github.com/repos/open-solid/shared/zipball/43474d96accd950a2f906cc236b0612e2ab91005",
+                "reference": "43474d96accd950a2f906cc236b0612e2ab91005",
                 "shasum": ""
             },
             "require": {
@@ -2805,7 +2805,7 @@
                 "issues": "https://github.com/open-solid/shared/issues",
                 "source": "https://github.com/open-solid/shared/tree/main"
             },
-            "time": "2025-12-10T21:39:51+00:00"
+            "time": "2025-12-10T21:57:25+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
