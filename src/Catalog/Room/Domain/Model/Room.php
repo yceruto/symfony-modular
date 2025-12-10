@@ -7,32 +7,18 @@ namespace App\Catalog\Room\Domain\Model;
 use App\Catalog\Room\Domain\Error\InvalidRoomState;
 use App\Catalog\Room\Domain\Event\RoomCreated;
 use App\Catalog\Room\Domain\Event\RoomUpdated;
-use Doctrine\ORM\Mapping\Column;
-use Doctrine\ORM\Mapping\Embedded;
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\Mapping\Id;
 use OpenSolid\Domain\Error\Store\InMemoryErrorStoreTrait;
 use OpenSolid\Domain\Event\Store\InMemoryEventStoreTrait;
 
-#[Entity]
 class Room
 {
     use InMemoryEventStoreTrait;
     use InMemoryErrorStoreTrait;
 
-    #[Id, Column]
     private(set) RoomId $id;
-
-    #[Embedded]
     private(set) RoomNumber $number;
-
-    #[Column]
     private(set) RoomStatus $status;
-
-    #[Column]
     private(set) \DateTimeImmutable $createdAt;
-
-    #[Column(nullable: true)]
     private(set) ?\DateTimeImmutable $updatedAt = null;
 
     public function __construct(

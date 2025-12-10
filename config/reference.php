@@ -1676,7 +1676,16 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         },
  *     }>,
  * }
- * @psalm-type OpensolidSharedConfig = array<mixed>
+ * @psalm-type OpensolidSharedConfig = array{
+ *     doctrine?: array{
+ *         orm?: array{
+ *             mapping?: array{
+ *                 type?: scalar|null, // Default: "xml"
+ *                 relative_path?: scalar|null, // Default: "/Infrastructure/Resources/config/doctrine/mapping/"
+ *             },
+ *         },
+ *     },
+ * }
  * @psalm-type RoomConfig = array<mixed>
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
