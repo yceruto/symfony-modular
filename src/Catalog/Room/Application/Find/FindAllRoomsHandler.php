@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Application\Find;
 
-use App\Catalog\Room\Domain\Repository\RoomRepository;
-use OpenSolid\Cqs\Query\Query;
 use OpenSolid\CqsBundle\Attribute\AsQueryHandler;
 
 #[AsQueryHandler]
-final readonly class FindAllRoomsHandler extends Query
+final readonly class FindAllRoomsHandler
 {
     public function __construct(
         private RoomFinder $finder,
