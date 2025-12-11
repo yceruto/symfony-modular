@@ -1,3 +1,9 @@
+---
+name: new-module
+description: Create a new module with DDD structure for Symfony. Use when adding bounded contexts or module scaffolding.
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash
+---
+
 # Skill: Create New Module
 
 This skill generates a new module with minimal setup for a Symfony modular application following DDD principles.
@@ -39,7 +45,9 @@ src/{Context}/{Module}/
 │   │           └── mapping/
 │   │               └── {Entity}.orm.xml
 │   └── {Module}Extension.php
-└── Presentation/          # HTTP/Console - create empty initially
+└── Presentation/
+    └── Http/
+        └── {Entity}Resource.php
 ```
 
 ## Files to Generate
@@ -192,6 +200,29 @@ final readonly class Doctrine{Entity}Repository implements {Entity}Repository
 }
 ```
 
+### 7. API Platform Resource (Required)
+
+**File:** `src/{Context}/{Module}/Presentation/Http/{Entity}Resource.php`
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\{Context}\{Module}\Presentation\Http;
+
+use ApiPlatform\Metadata\ApiResource;
+
+#[ApiResource(
+    shortName: '{entity}s',
+)]
+class {Entity}Resource
+{
+}
+```
+
+Note: The `shortName` should be the plural lowercase form of the entity name (e.g., `properties`, `products`, `users`).
+
 ## Post-Generation Steps
 
 After generating the files, remind the user to:
@@ -219,4 +250,4 @@ This creates:
 - `src/Catalog/Product/Infrastructure/Persistence/Doctrine/DoctrineProductRepository.php`
 - `src/Catalog/Product/Infrastructure/Resources/config/doctrine/mapping/Product.orm.xml`
 - `src/Catalog/Product/Infrastructure/ProductExtension.php`
-- `src/Catalog/Product/Presentation/`
+- `src/Catalog/Product/Presentation/Http/ProductResource.php`
