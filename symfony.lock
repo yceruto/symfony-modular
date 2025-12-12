@@ -61,12 +61,6 @@
             "config/packages/nelmio_cors.yaml"
         ]
     },
-    "open-solid/cqs-bundle": {
-        "version": "v1.0.11"
-    },
-    "open-solid/domain-bundle": {
-        "version": "v1.0.5"
-    },
     "open-solid/shared": {
         "version": "dev-main"
     },

@@ -1523,16 +1523,6 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         ...<mixed>
  *     },
  * }
- * @psalm-type CqsConfig = array{
- *     bus?: array{
- *         strategy?: "symfony"|"native", // Default: "symfony"
- *     },
- * }
- * @psalm-type DomainConfig = array{
- *     bus?: array{
- *         strategy?: "symfony"|"native", // Default: "symfony"
- *     },
- * }
  * @psalm-type MonologConfig = array{
  *     use_microseconds?: scalar|null, // Default: true
  *     channels?: list<scalar|null>,
@@ -1676,7 +1666,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         },
  *     }>,
  * }
- * @psalm-type OpensolidSharedConfig = array{
+ * @psalm-type OpensolidConfig = array{
  *     doctrine?: array{
  *         orm?: array{
  *             mapping?: array{
@@ -1685,8 +1675,11 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             },
  *         },
  *     },
+ *     bus?: array{
+ *         strategy?: "symfony"|"native"|"custom", // Default: "symfony"
+ *     },
  * }
- * @psalm-type RoomConfig = array<mixed>
+ * @psalm-type AppRoomConfig = array<mixed>
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1698,11 +1691,9 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     doctrine_migrations?: DoctrineMigrationsConfig,
  *     nelmio_cors?: NelmioCorsConfig,
  *     api_platform?: ApiPlatformConfig,
- *     cqs?: CqsConfig,
- *     domain?: DomainConfig,
  *     monolog?: MonologConfig,
- *     opensolid_shared?: OpensolidSharedConfig,
- *     room?: RoomConfig,
+ *     opensolid?: OpensolidConfig,
+ *     app_room?: AppRoomConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1714,10 +1705,8 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
- *         cqs?: CqsConfig,
- *         domain?: DomainConfig,
  *         monolog?: MonologConfig,
- *         opensolid_shared?: OpensolidSharedConfig,
+ *         opensolid?: OpensolidConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1730,10 +1719,8 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
- *         cqs?: CqsConfig,
- *         domain?: DomainConfig,
  *         monolog?: MonologConfig,
- *         opensolid_shared?: OpensolidSharedConfig,
+ *         opensolid?: OpensolidConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1746,10 +1733,8 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
- *         cqs?: CqsConfig,
- *         domain?: DomainConfig,
  *         monolog?: MonologConfig,
- *         opensolid_shared?: OpensolidSharedConfig,
+ *         opensolid?: OpensolidConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

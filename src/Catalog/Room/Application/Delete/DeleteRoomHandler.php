@@ -6,7 +6,7 @@ namespace App\Catalog\Room\Application\Delete;
 
 use App\Catalog\Room\Application\Find\RoomFinder;
 use App\Catalog\Room\Domain\Repository\RoomRepository;
-use OpenSolid\CqsBundle\Attribute\AsCommandHandler;
+use OpenSolid\Shared\Application\Command\Attribute\AsCommandHandler;
 
 #[AsCommandHandler]
 final readonly class DeleteRoomHandler

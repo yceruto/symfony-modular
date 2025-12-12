@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Application\Find;
 
-use OpenSolid\Cqs\Query\Query;
+use OpenSolid\Shared\Application\Query\Query;
 
 /**
  * @template-extends Query<RoomCollection>

@@ -6,7 +6,7 @@ namespace App\Catalog\Room\Application\Update;
 
 use App\Catalog\Room\Application\Find\RoomFinder;
 use App\Catalog\Room\Domain\Model\Room;
-use OpenSolid\CqsBundle\Attribute\AsCommandHandler;
+use OpenSolid\Shared\Application\Command\Attribute\AsCommandHandler;
 
 #[AsCommandHandler]
 final readonly class UpdateRoomHandler

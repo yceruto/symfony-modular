@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Catalog\Room\Application\Find;
 
-use OpenSolid\CqsBundle\Attribute\AsQueryHandler;
+use OpenSolid\Shared\Application\Query\Attribute\AsQueryHandler;
 
 #[AsQueryHandler]
 final readonly class FindAllRoomsHandler

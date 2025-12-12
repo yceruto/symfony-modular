@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Catalog\Room\Domain\Event;
 
 use App\Catalog\Room\Domain\Model\RoomState;
-use OpenSolid\Domain\Event\DomainEvent;
+use OpenSolid\Shared\Domain\Event\DomainEvent;
 
 final readonly class RoomUpdated extends DomainEvent
 {

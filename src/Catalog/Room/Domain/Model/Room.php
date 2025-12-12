@@ -7,13 +7,13 @@ namespace App\Catalog\Room\Domain\Model;
 use App\Catalog\Room\Domain\Error\InvalidRoomState;
 use App\Catalog\Room\Domain\Event\RoomCreated;
 use App\Catalog\Room\Domain\Event\RoomUpdated;
-use OpenSolid\Domain\Error\Store\InMemoryErrorStoreTrait;
-use OpenSolid\Domain\Event\Store\InMemoryEventStoreTrait;
+use OpenSolid\Shared\Domain\Error\Store\InMemoryErrorStore;
+use OpenSolid\Shared\Domain\Event\Store\InMemoryEventStore;
 
 class Room
 {
-    use InMemoryEventStoreTrait;
-    use InMemoryErrorStoreTrait;
+    use InMemoryEventStore;
+    use InMemoryErrorStore;
 
     private(set) RoomId $id;
     private(set) RoomNumber $number;

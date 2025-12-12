@@ -8,7 +8,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
 use App\Catalog\Room\Application\Find\FindOneRoom;
 use App\Catalog\Room\Domain\Model\RoomId;
-use OpenSolid\Cqs\Query\QueryBus;
+use OpenSolid\Shared\Application\Query\QueryBus;
 
 final readonly class RoomProvider implements ProviderInterface
 {

@@ -9,7 +9,7 @@ use ApiPlatform\State\ProcessorInterface;
 use App\Catalog\Room\Application\Update\UpdateRoom;
 use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Presentation\Http\Get\RoomView;
-use OpenSolid\Cqs\Command\CommandBus;
+use OpenSolid\Shared\Application\Command\CommandBus;
 
 final readonly class PatchRoomProcessor implements ProcessorInterface
 {

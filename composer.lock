@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "472dfb34522b096632264ecc0e795cf9",
+    "content-hash": "8bcf2fc0881347e10c6253476d99d896",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/doctrine-common.git",
@@ -92,7 +92,7 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/doctrine-common/tree/v4.2.9"
+                "source": "https://github.com/api-platform/doctrine-common/tree/v4.2.10"
             },
             "time": "2025-12-04T14:20:26+00:00"
         },
@@ -185,7 +185,7 @@
         },
         {
             "name": "api-platform/documentation",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/documentation.git",
@@ -242,13 +242,13 @@
             ],
             "description": "API Platform documentation controller.",
             "support": {
-                "source": "https://github.com/api-platform/documentation/tree/v4.2.9"
+                "source": "https://github.com/api-platform/documentation/tree/v4.2.10"
             },
             "time": "2025-11-30T12:55:42+00:00"
         },
         {
             "name": "api-platform/http-cache",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/http-cache.git",
@@ -322,13 +322,13 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/http-cache/tree/v4.2.9"
+                "source": "https://github.com/api-platform/http-cache/tree/v4.2.10"
             },
             "time": "2025-11-30T12:55:42+00:00"
         },
         {
             "name": "api-platform/hydra",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/hydra.git",
@@ -409,13 +409,13 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/hydra/tree/v4.2.9"
+                "source": "https://github.com/api-platform/hydra/tree/v4.2.10"
             },
             "time": "2025-12-04T14:20:26+00:00"
         },
         {
             "name": "api-platform/json-schema",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/json-schema.git",
@@ -490,13 +490,13 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/json-schema/tree/v4.2.9"
+                "source": "https://github.com/api-platform/json-schema/tree/v4.2.10"
             },
             "time": "2025-12-02T13:32:19+00:00"
         },
         {
             "name": "api-platform/jsonld",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/jsonld.git",
@@ -570,22 +570,22 @@
                 "rest"
             ],
             "support": {
-                "source": "https://github.com/api-platform/jsonld/tree/v4.2.9"
+                "source": "https://github.com/api-platform/jsonld/tree/v4.2.10"
             },
             "time": "2025-11-30T12:55:42+00:00"
         },
         {
             "name": "api-platform/metadata",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/metadata.git",
-                "reference": "c9953fbbbb02ec9f6d4ccfff30b5904c643c4c64"
+                "reference": "0071674a851f1c9564e4b16b9812495cceef154d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/metadata/zipball/c9953fbbbb02ec9f6d4ccfff30b5904c643c4c64",
-                "reference": "c9953fbbbb02ec9f6d4ccfff30b5904c643c4c64",
+                "url": "https://api.github.com/repos/api-platform/metadata/zipball/0071674a851f1c9564e4b16b9812495cceef154d",
+                "reference": "0071674a851f1c9564e4b16b9812495cceef154d",
                 "shasum": ""
             },
             "require": {
@@ -668,13 +668,13 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/metadata/tree/v4.2.9"
+                "source": "https://github.com/api-platform/metadata/tree/v4.2.10"
             },
-            "time": "2025-12-04T14:20:26+00:00"
+            "time": "2025-12-11T16:36:37+00:00"
         },
         {
             "name": "api-platform/openapi",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/openapi.git",
@@ -758,13 +758,13 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/openapi/tree/v4.2.9"
+                "source": "https://github.com/api-platform/openapi/tree/v4.2.10"
             },
             "time": "2025-11-30T12:55:42+00:00"
         },
         {
             "name": "api-platform/serializer",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/serializer.git",
@@ -851,22 +851,22 @@
                 "serializer"
             ],
             "support": {
-                "source": "https://github.com/api-platform/serializer/tree/v4.2.9"
+                "source": "https://github.com/api-platform/serializer/tree/v4.2.10"
             },
             "time": "2025-11-30T12:55:42+00:00"
         },
         {
             "name": "api-platform/state",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/state.git",
-                "reference": "ade7d1103e3fa2adec29acd723e12ece8ec58c99"
+                "reference": "b30b8183e8e7eb1792ed0ad0942aa83668e8c30c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/state/zipball/ade7d1103e3fa2adec29acd723e12ece8ec58c99",
-                "reference": "ade7d1103e3fa2adec29acd723e12ece8ec58c99",
+                "url": "https://api.github.com/repos/api-platform/state/zipball/b30b8183e8e7eb1792ed0ad0942aa83668e8c30c",
+                "reference": "b30b8183e8e7eb1792ed0ad0942aa83668e8c30c",
                 "shasum": ""
             },
             "require": {
@@ -948,9 +948,9 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/api-platform/state/tree/v4.2.9"
+                "source": "https://github.com/api-platform/state/tree/v4.2.10"
             },
-            "time": "2025-12-04T14:20:26+00:00"
+            "time": "2025-12-11T08:50:32+00:00"
         },
         {
             "name": "api-platform/symfony",
@@ -1080,7 +1080,7 @@
         },
         {
             "name": "api-platform/validator",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/validator.git",
@@ -1150,7 +1150,7 @@
                 "validator"
             ],
             "support": {
-                "source": "https://github.com/api-platform/validator/tree/v4.2.9"
+                "source": "https://github.com/api-platform/validator/tree/v4.2.10"
             },
             "time": "2025-12-04T14:20:26+00:00"
         },
@@ -2572,223 +2572,31 @@
             "time": "2024-12-13T21:15:04+00:00"
         },
         {
-            "name": "open-solid/cqs",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-solid/cqs.git",
-                "reference": "39039514a9606433f64235b10a747feeb146c766"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/cqs/zipball/39039514a9606433f64235b10a747feeb146c766",
-                "reference": "39039514a9606433f64235b10a747feeb146c766",
-                "shasum": ""
-            },
-            "require": {
-                "open-solid/bus": "^1.1",
-                "php": ">=8.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.54",
-                "phpunit/phpunit": "^10.0",
-                "psalm/plugin-phpunit": "^0.18",
-                "symfony/messenger": "^7.1",
-                "vimeo/psalm": "^5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenSolid\\Cqs\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yonel Ceruto",
-                    "email": "open@yceruto.dev"
-                }
-            ],
-            "description": "Contract for Command Query Separation pattern",
-            "support": {
-                "issues": "https://github.com/open-solid/cqs/issues",
-                "source": "https://github.com/open-solid/cqs/tree/v1.0.4"
-            },
-            "time": "2024-08-21T18:21:03+00:00"
-        },
-        {
-            "name": "open-solid/cqs-bundle",
-            "version": "v1.0.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-solid/cqs-bundle.git",
-                "reference": "9d28cc7dacbfea9f8497b9c16645c38a1ac018a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/cqs-bundle/zipball/9d28cc7dacbfea9f8497b9c16645c38a1ac018a1",
-                "reference": "9d28cc7dacbfea9f8497b9c16645c38a1ac018a1",
-                "shasum": ""
-            },
-            "require": {
-                "open-solid/cqs": "^1.0",
-                "php": ">=8.2",
-                "symfony/framework-bundle": "^7.1"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "^2.12",
-                "doctrine/orm": "^3.0",
-                "friendsofphp/php-cs-fixer": "^3.54",
-                "phpunit/phpunit": "^10.0",
-                "roave/security-advisories": "dev-latest",
-                "symfony/browser-kit": "^7.1",
-                "symfony/messenger": "^7.1",
-                "symfony/yaml": "^7.1",
-                "yceruto/decorator": "^1.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenSolid\\CqsBundle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yonel Ceruto",
-                    "email": "open@yceruto.dev"
-                }
-            ],
-            "description": "Symfony integration for Command Query Separation pattern",
-            "support": {
-                "issues": "https://github.com/open-solid/cqs-bundle/issues",
-                "source": "https://github.com/open-solid/cqs-bundle/tree/v1.0.11"
-            },
-            "time": "2024-12-13T21:18:20+00:00"
-        },
-        {
-            "name": "open-solid/domain",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-solid/domain.git",
-                "reference": "af37d37ff2f0c18040541ae7c88a4075d92dde7e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/domain/zipball/af37d37ff2f0c18040541ae7c88a4075d92dde7e",
-                "reference": "af37d37ff2f0c18040541ae7c88a4075d92dde7e",
-                "shasum": ""
-            },
-            "require": {
-                "open-solid/bus": "^1.1",
-                "php": ">=8.2",
-                "symfony/string": "^7.1",
-                "symfony/uid": "^7.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.54",
-                "phpunit/phpunit": "^11.1",
-                "symfony/messenger": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenSolid\\Domain\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yonel Ceruto",
-                    "email": "open@yceruto.dev"
-                }
-            ],
-            "description": "Domain events, event bus and more",
-            "support": {
-                "issues": "https://github.com/open-solid/domain/issues",
-                "source": "https://github.com/open-solid/domain/tree/v1.0.3"
-            },
-            "time": "2024-08-21T18:41:36+00:00"
-        },
-        {
-            "name": "open-solid/domain-bundle",
-            "version": "v1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-solid/domain-bundle.git",
-                "reference": "1d3f3c90fabd5b2adbe5e58267f239036e701bfa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/domain-bundle/zipball/1d3f3c90fabd5b2adbe5e58267f239036e701bfa",
-                "reference": "1d3f3c90fabd5b2adbe5e58267f239036e701bfa",
-                "shasum": ""
-            },
-            "require": {
-                "open-solid/domain": "^1.0",
-                "php": ">=8.2",
-                "symfony/framework-bundle": "^6.4|^7.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.54",
-                "symfony/messenger": "^7.1",
-                "yceruto/decorator": "^1.2"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "OpenSolid\\DomainBundle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yonel Ceruto",
-                    "email": "open@yceruto.dev"
-                }
-            ],
-            "description": "Symfony bundle for domain building blocks",
-            "support": {
-                "issues": "https://github.com/open-solid/domain-bundle/issues",
-                "source": "https://github.com/open-solid/domain-bundle/tree/v1.0.5"
-            },
-            "time": "2024-12-13T21:22:49+00:00"
-        },
-        {
             "name": "open-solid/shared",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-solid/shared.git",
-                "reference": "36a532bd9170e9452664102131518b952cdf306d"
+                "reference": "12746ece0b65407c07e0566b14f1b74d11f722d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-solid/shared/zipball/36a532bd9170e9452664102131518b952cdf306d",
-                "reference": "36a532bd9170e9452664102131518b952cdf306d",
+                "url": "https://api.github.com/repos/open-solid/shared/zipball/12746ece0b65407c07e0566b14f1b74d11f722d8",
+                "reference": "12746ece0b65407c07e0566b14f1b74d11f722d8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4"
+                "open-solid/bus": "^1.1",
+                "php": ">=8.4",
+                "symfony/uid": "^7.0|^8.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "^3.1",
                 "doctrine/orm": "^3.5",
+                "friendsofphp/php-cs-fixer": "^3.91",
                 "phpunit/phpunit": "^12.5",
-                "symfony/framework-bundle": "^8.0"
+                "symfony/framework-bundle": "^8.0",
+                "symfony/messenger": "^8.0"
             },
             "default-branch": true,
             "type": "symfony-bundle",
@@ -2806,7 +2614,7 @@
                 "issues": "https://github.com/open-solid/shared/issues",
                 "source": "https://github.com/open-solid/shared/tree/main"
             },
-            "time": "2025-12-10T22:22:00+00:00"
+            "time": "2025-12-11T19:47:42+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

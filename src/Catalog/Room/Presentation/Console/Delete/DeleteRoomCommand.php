@@ -7,7 +7,7 @@ namespace App\Catalog\Room\Presentation\Console\Delete;
 use App\Catalog\Room\Application\Delete\DeleteRoom;
 use App\Catalog\Room\Domain\Error\RoomNotFound;
 use App\Catalog\Room\Domain\Model\RoomId;
-use OpenSolid\Cqs\Command\CommandBus;
+use OpenSolid\Shared\Application\Command\CommandBus;
 use Symfony\Component\Console\Attribute\Argument;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Style\SymfonyStyle;

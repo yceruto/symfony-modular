@@ -6,7 +6,7 @@ namespace App\Catalog\Room\Application\Create;
 
 use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Repository\RoomRepository;
-use OpenSolid\CqsBundle\Attribute\AsCommandHandler;
+use OpenSolid\Shared\Application\Command\Attribute\AsCommandHandler;
 
 #[AsCommandHandler]
 final readonly class CreateRoomHandler

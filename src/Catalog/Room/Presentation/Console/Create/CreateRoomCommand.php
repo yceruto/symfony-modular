@@ -7,7 +7,7 @@ namespace App\Catalog\Room\Presentation\Console\Create;
 use App\Catalog\Room\Application\Create\CreateRoom;
 use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Domain\Model\RoomNumber;
-use OpenSolid\Cqs\Command\CommandBus;
+use OpenSolid\Shared\Application\Command\CommandBus;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Attribute\MapInput;
 use Symfony\Component\Console\Style\SymfonyStyle;

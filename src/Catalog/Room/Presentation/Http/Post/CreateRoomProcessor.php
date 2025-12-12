@@ -10,7 +10,7 @@ use App\Catalog\Room\Application\Create\CreateRoom;
 use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Domain\Model\RoomNumber;
 use App\Catalog\Room\Presentation\Http\Get\RoomView;
-use OpenSolid\Cqs\Command\CommandBus;
+use OpenSolid\Shared\Application\Command\CommandBus;
 
 final readonly class CreateRoomProcessor implements ProcessorInterface
 {

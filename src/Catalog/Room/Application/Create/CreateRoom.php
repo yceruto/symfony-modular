@@ -8,7 +8,7 @@ use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Model\RoomId;
 use App\Catalog\Room\Domain\Model\RoomNumber;
 use App\Catalog\Room\Domain\Model\RoomState;
-use OpenSolid\Cqs\Command\Command;
+use OpenSolid\Shared\Application\Command\Command;
 
 /**
  * @template-extends Command<Room>

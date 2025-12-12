@@ -6,7 +6,7 @@ namespace App\Catalog\Room\Application\Find;
 
 use App\Catalog\Room\Domain\Model\Room;
 use App\Catalog\Room\Domain\Model\RoomId;
-use OpenSolid\Cqs\Query\Query;
+use OpenSolid\Shared\Application\Query\Query;
 
 /**
  * @template-extends Query<Room>
